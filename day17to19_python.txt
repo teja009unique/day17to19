@@ -1,0 +1,187 @@
+Q) What is Inheritance ?
+A) Inheritance is a core concept of Object Oriented Programming (OOP) languages.
+   It is a mechanism where you can derive a class from another class for a hierarchy of classes that share a set of attributes and methods.
+   Inheritance allows a class to inherit properties and behaviours from another class, promoting code resuse and establishing relationships between classes.
+
+-----------------
+
+Q) What is Single inheritance.
+
+A) class parent :
+	.
+	.
+	.
+	.	
+	.
+   class child(parent) :
+	.
+	.	
+	.	
+	.
+	.
+
+
+Ex: 
+class parent:
+	def __init__(self,property,cash):
+		self.property = property
+		self.cash = cash
+	def get_property(self):
+		return self.property
+class child(parent):
+	pass
+x = parent(2,2)
+y = child(10,15)
+print(x.get_property())
+print(y.get_property())
+
+
+o/p: 2
+     10
+
+
+------------------------------------
+
+Q) What is Multi Level inheritance ?
+
+A) class parent :
+	.
+	.
+	.
+	.
+	.
+   class child(parent) :
+	.
+	.
+	.
+	.
+	.
+   class child2(child) :
+	.
+	.
+	.
+	.
+	.
+
+
+
+If 'child2' class imports 'child' class, 'child2' class will have all the things of 'parent' class as well as 'child' class, because 'child' class has 
+all the things of 'parent' class already.
+Therefore, 'child2' can simply import 'child' class. 
+
+Ex:
+class parent :
+	def __init__(self,property,cash) :
+		print("I am created")
+		self.property = property
+		self.cash = cash
+	def get_property(self) :
+		return f"{self.property} and {self.cash}"
+class child(parent)
+	def imfrom(self) :
+		return "I am from child class"
+class child2(child) :
+	pass
+x = parent(2,2)
+y = child(10,15)
+z = child2(20,30)
+print(z.property)
+print(z.imfrom())
+print(x.get_property())
+print(y.get_property())
+
+
+o/p: I am created
+     I am created
+     I am created
+     20
+     I am from child class
+     2 and 2
+     10 and 15
+
+
+
+
+-----------------------------------------------
+
+Q) What is Hierarchial inheritance ?
+
+A) class parent :
+	.
+	.
+	.
+	.
+	.
+   class child1(parent) :
+	.
+	.
+	.
+	.
+	.
+   class child2(parent) :
+	.
+	.
+	.
+	.
+	.
+
+
+'child2' class cannot access the attributes and methods of 'child1'.
+'child2' class can only access the attributes and methods of 'parent' class.
+
+
+
+
+
+
+---------------------------------------------------
+
+Q) What is Multiple inheritance ?
+
+A) class parent1 :
+	.
+	.
+	.
+	.
+	.
+   class parent2 :
+	.
+	.
+	.
+	.
+	.
+   class child(parent1 , parent2) :
+	.
+	.
+	.
+	.
+	.
+
+
+
+For 1 class, if we pass multiple classes as parameters, then it is called Multiple Inheritance.
+
+Ex:
+class father :
+	def __init__(self,property,cash) :
+		print("I am created")
+		self.property = property
+		self.cash = cash
+	def get_property(self) :
+		return f"{self.property} and {self.cash}"
+class mother :
+	def imfrom(self) :
+		return "I am from mother"
+class child(father , mother) :
+	pass
+z = child(20,30)
+print(z.property)
+print(z.imfrom())
+
+
+o/p: I am created
+     20
+     I am from mother
+
+ 
+
